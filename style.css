@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Nunito&display=swap');
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #fff;
+    font-family: Nunito, sans-serif;
+    font-size: 14px;
+    line-height: 1;
+}
+
+section {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+
+section.toolbox {
+    right: 0;
+    width: 180px;
+    overflow-y: scroll;
+    background-color: #fff;
+    border-left: 1px solid #545454;
+    display: flex;
+    flex-direction: column;
+}
+
+section.canvas {
+    left: 0;
+    width: calc(100vw-180px);
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+section.toolbox>div {
+    padding: 20px 16px 8px 16px;
+    border-bottom: 1px solid #545454;
+}
+
+h2 {
+    margin-bottom: 24px;
+    font-family: Lexend Deca;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+label>* {
+    margin-top: 8px;
+}
+
+input,
+button,
+select {
+    font-size: 14px;
+    font-family: Nunito, sans-serif;
+    line-height: 1;
+    width: 100%;
+    height: 32px;
+    margin-bottom: 12px;
+    border: 1px solid #545454;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+input:hover,
+button:hover,
+select:hover {
+    background-color: #dfdfdf;
+}
+
+input[type="range"] {
+    height: 16px;
+}
