@@ -1,7 +1,7 @@
 const toolboxWidth = document.querySelector('section.toolbox').offsetWidth;
 let canvas = null;
-let bgColor = '#C82D2D'
-let selectedTool = 'pen'
+let bgColor = '#B51C1C'
+let selectedTool = 'ink'
 let paintColor = '#000000'
 let ifRainbowColor = false
 let opacity = 220
@@ -17,6 +17,7 @@ function setup() {
         //把画布通过select放到section。canvas下
     canvas.parent(select('section.canvas'))
     background(bgColor)
+    goldenspot()
 
     distance = 10;
     spring = 0.5;
@@ -26,6 +27,16 @@ function setup() {
     x = y = ax = ay = a = r = f = 0;
 
 }
+
+function goldenspot(){
+    background(bgColor)
+    for(i = 0;i<400;i++){
+        fill(255,212,131,random(70,255))
+        noStroke()
+        ellipse(random(0, windowWidth- toolboxWidth), random(0, windowHeight), random(1,8))
+    }
+}
+
 //画笔设置机
 function setupBrushSelector(parentTag) {
     //创建画笔选择器(下拉菜单 createSelect from p5)
@@ -37,6 +48,7 @@ function setupBrushSelector(parentTag) {
     makeLabel(brushSelector, parentTag, 'Paintbrush style')
         //创建笔刷目录
     const brushes = [
+            'ink',    
             'pen',
             'marker',
             'beads',
@@ -45,7 +57,7 @@ function setupBrushSelector(parentTag) {
             'fountainPen',
             'splatter',
             'sprayPaint',
-            'ink',
+            
         ]
         //通过option方法，把笔刷目录放到下拉选择器里
     brushes.forEach(function(brush) {
@@ -94,6 +106,7 @@ function setupSaveButton(parentTag) {
 function resetCanvas() {
     resizeCanvas(windowWidth - toolboxWidth, windowHeight)
     background(bgColor)
+    goldenspot()
 }
 
 function setupResetButton(parentTag) {
